@@ -30,4 +30,4 @@ return "It's a Tie!";
      } else {
         return "Computer Wins!";
      }
-    }
+    
