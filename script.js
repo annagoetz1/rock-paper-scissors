@@ -37,4 +37,31 @@ return "It's a Tie!";
   const result = playRound(playerSelection, computerSelection);
 console.log(result);
 
-  function playRounds ()
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let round = 1; round <= 5; round++) {
+    const playerSelection = prompt(`Round ${round}: Rock, Paper, or Scissors?`).toLowerCase();
+    const computerSelection = getComputerChoice();
+
+    const result = playRound(playerSelection, computerSelection);
+    console.log(result);
+
+    if (result === "You Win!") {
+      playerScore++;
+    } else if (result === "Computer Wins!") {
+      computerScore++;
+    }
+  }
+
+  console.log(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
+
+  if (playerScore > computerScore) {
+    console.log("Congratulations! You win the game!");
+  } else if (playerScore < computerScore) {
+    console.log("Computer wins the game. Better luck next time!");
+  } else {
+    console.log("The game is a tie!");
+  }
+}
