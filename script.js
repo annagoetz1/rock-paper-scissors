@@ -8,6 +8,8 @@
 #create a new function called game to use previous function inside of
 #make this function call 5 times over to make a 5 round game
 
+const playerSelection = prompt("Rock, Paper, or Scissors?")
+
 function getComputerChoice () {
 const choices = ['Rock', 'Paper', 'Scissors'];
 const randomIndex = Math.floor(Math.random() * choices.length);
@@ -16,7 +18,7 @@ return choices[randomIndex]
  const computerSelection = getComputerChoice();
  console.log('Computer chose: ' + computerSelection);
 
- const playerSelection = prompt("Rock, Paper, or Scissors?")
+
 
  function playRound (playerSelection, computerSelection) {
 if (playerSelection === computerSelection) {
