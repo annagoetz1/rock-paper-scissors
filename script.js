@@ -7,6 +7,7 @@
 #ensure results are returned instead of console.log
 #create a new function called game to use previous function inside of
 #make this function call 5 times over to make a 5 round game
+#make a functino to declare a tie or try again if choices match up 
 
 const playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
@@ -32,4 +33,8 @@ return "It's a Tie!";
       return "Computer Wins!";
     }
   }
+
+  const result = playRound(playerSelection, computerSelection);
+console.log(result);
+
   function playRounds ()
