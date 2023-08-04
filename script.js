@@ -19,7 +19,6 @@ return choices[randomIndex]
  console.log('Computer chose: ' + computerSelection);
 
 
-
  function playRound (playerSelection, computerSelection) {
 if (playerSelection === computerSelection) {
 return "It's a Tie!";
@@ -33,3 +32,4 @@ return "It's a Tie!";
       return "Computer Wins!";
     }
   }
+  function playRounds ()
