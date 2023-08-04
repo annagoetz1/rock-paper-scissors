@@ -8,7 +8,7 @@
 #create a new function called game to use previous function inside of
 #make this function call 5 times over to make a 5 round game
 
-const playerSelection = prompt("Rock, Paper, or Scissors?")
+const playerSelection = prompt("Rock, Paper, or Scissors?").toLowerCase();
 
 function getComputerChoice () {
 const choices = ['Rock', 'Paper', 'Scissors'];
@@ -23,9 +23,9 @@ return choices[randomIndex]
 if (playerSelection === computerSelection) {
 return "It's a Tie!";
  } else if (
-    (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
-    (playerSelection === 'Paper' && computerSelection === 'Rock') ||
-    (playerSelection === 'Scissors' && computerSelection === 'Paper') 
+    (playerSelection === 'rock' && computerSelection === 'Scissors') ||
+    (playerSelection === 'paper' && computerSelection === 'Rock') ||
+    (playerSelection === 'scissors' && computerSelection === 'Paper') 
      ) {
       return "You Win!";
     } else {
