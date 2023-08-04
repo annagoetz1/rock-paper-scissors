@@ -19,15 +19,15 @@ return choices[randomIndex]
  const playerSelection = prompt("Rock, Paper, or Scissors?")
 
  function playRound (playerSelection, computerSelection) {
-if (playerSelection === computerSelection)
+if (playerSelection === computerSelection) {
 return "It's a Tie!";
  } else if (
     (playerSelection === 'Rock' && computerSelection === 'Scissors') ||
     (playerSelection === 'Paper' && computerSelection === 'Rock') ||
     (playerSelection === 'Scissors' && computerSelection === 'Paper') 
      ) {
-        return "You Win!";
-     } else {
-        return "Computer Wins!";
-     }
-    
+      return "You Win!";
+    } else {
+      return "Computer Wins!";
+    }
+  }
