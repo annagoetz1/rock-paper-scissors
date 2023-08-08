@@ -41,7 +41,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (let round = 1; round <= 4; round++) {
+  for (let round = 2; round <= 5; round++) {
     const playerSelection = prompt(`Round ${round}: Rock, Paper, or Scissors?`).toLowerCase();
     const computerSelection = getComputerChoice();
 
