@@ -35,7 +35,7 @@ return "It's a Tie!";
   }
 
   const result = playRound(playerSelection, computerSelection);
-console.log(result);
+alert(result);
 
 function game() {
   let playerScore = 0;
@@ -53,17 +53,17 @@ function game() {
     } else if (result === "Computer Wins!") {
       computerScore++;
     }
-  console.log(result);
+  alert(result);
   }
 
-  console.log(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
+  alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
   if (playerScore > computerScore) {
-   console.log("Congratulations! You win the game!");
+   alert("Congratulations! You win the game!");
   } else if (playerScore < computerScore) {
-    console.log("Computer wins the game. Better luck next time!");
+    alert("Computer wins the game. Better luck next time!");
   } else {
-    console.log("The game is a tie!");
+    alert("The game is a tie!");
   }
 }
 game();
