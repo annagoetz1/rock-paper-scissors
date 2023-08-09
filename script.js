@@ -1,23 +1,12 @@
-#create a function called getComputerChoice that randomly returns Rock Paper or Scissors
-#create a function that plays a single round 
-#create a prompt to get input from user
-#set parameters under playerSelection and computerSelection
-#return a string that declares the winner of the round
-#include case -insensitive parameters for functions
-#ensure results are returned instead of console.log
-#create a new function called game to use previous function inside of
-#make this function call 5 times over to make a 5 round game
-#make a functino to declare a tie or try again if choices match up 
 
-
- 
-
+//signals computer to make a random choice between rock, paper and scissors
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
   const randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
 
+//main game function for each round played to determine each winner
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "It's a Tie!";
@@ -32,6 +21,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+//this function starts off our 5 round game function but allows the initial round to be included in scorekeeping
 function game() {
   let playerScore = 0;
   let computerScore = 0;
@@ -41,14 +31,14 @@ function game() {
   const initialComputerSelection = getComputerChoice();
   const initialResult = playRound(initialPlayerSelection, initialComputerSelection);
   alert(initialResult);
-
+//add thsi additional else if to ensure the player and computer scores are accurately tracked at the end
   if (result === "You Win!") {
     playerScore++;
   } else if (result === "Computer Wins!") {
     computerScore++;
   }
 
- 
+ //start this game function at round 2 to eliminate accidnetal extra rounds
   for (let round = 2; round <= 5; round++) {
     const playerSelection = prompt(`Round ${round}: Rock, Paper, or Scissors?`).toLowerCase();
     const computerSelection = getComputerChoice();
