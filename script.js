@@ -9,61 +9,69 @@
 #make this function call 5 times over to make a 5 round game
 #make a functino to declare a tie or try again if choices match up 
 
-const playerSelection = prompt("Rock, Paper, or Scissors? Best out of 5!").toLowerCase();
 
-function getComputerChoice () {
-const choices = ['Rock', 'Paper', 'Scissors'];
-const randomIndex = Math.floor(Math.random() * choices.length);
-return choices[randomIndex]
+ 
+
+function getComputerChoice() {
+  const choices = ['Rock', 'Paper', 'Scissors'];
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  return choices[randomIndex];
 }
- const computerSelection = getComputerChoice();
- console.log('Computer chose: ' + computerSelection);
 
-
- function playRound (playerSelection, computerSelection) {
-if (playerSelection === computerSelection) {
-return "It's a Tie!";
- } else if (
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    return "It's a Tie!";
+  } else if (
     (playerSelection === 'rock' && computerSelection === 'Scissors') ||
     (playerSelection === 'paper' && computerSelection === 'Rock') ||
-    (playerSelection === 'scissors' && computerSelection === 'Paper') 
-     ) {
-      return "You Win!";
-    } else {
-      return "Computer Wins!";
-    }
+    (playerSelection === 'scissors' && computerSelection === 'Paper')
+  ) {
+    return "You Win!";
+  } else {
+    return "Computer Wins!";
   }
-
-  const result = playRound(playerSelection, computerSelection);
-alert(result);
+}
 
 function game() {
   let playerScore = 0;
   let computerScore = 0;
 
+  
+  const initialPlayerSelection = prompt("Round 1: Rock, Paper, or Scissors? Best out of 5!").toLowerCase();
+  const initialComputerSelection = getComputerChoice();
+  const initialResult = playRound(initialPlayerSelection, initialComputerSelection);
+  alert(initialResult);
+
+  if (result === "You Win!") {
+    playerScore++;
+  } else if (result === "Computer Wins!") {
+    computerScore++;
+  }
+
+ 
   for (let round = 2; round <= 5; round++) {
     const playerSelection = prompt(`Round ${round}: Rock, Paper, or Scissors?`).toLowerCase();
     const computerSelection = getComputerChoice();
 
     const result = playRound(playerSelection, computerSelection);
-    
 
     if (result === "You Win!") {
       playerScore++;
     } else if (result === "Computer Wins!") {
       computerScore++;
     }
-  alert(result);
+    alert(result);
   }
 
   alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
   if (playerScore > computerScore) {
-   alert("Congratulations! You win the game!");
+    alert("Congratulations! You win the game!");
   } else if (playerScore < computerScore) {
     alert("Computer wins the game. Better luck next time!");
   } else {
     alert("The game is a tie!");
   }
 }
+
 game();
