@@ -28,10 +28,11 @@ function playRound(playerSelection, computerSelection) {
     const resultElement = document.getElementById('result');
     resultElement.textContent = 'Result: ' + result;
   }
+
+  let playerSelection = '';
   
   function getPlayerSelection(callback) {
 
-    let selection = '';
   
     const rockButton = document.getElementById('Rock');
     const paperButton = document.getElementById('Paper');
