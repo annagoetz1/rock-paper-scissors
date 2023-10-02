@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
 
   let playerSelection = '';
   
-  function getPlayerSelection(callback) {
+  function getPlayerSelection() {
 
   
     const rockButton = document.getElementById('Rock');
@@ -39,18 +39,18 @@ function playRound(playerSelection, computerSelection) {
     const scissorsButton = document.getElementById('Scissors');
   
     rockButton.addEventListener('click', () => {
-      selection = 'Rock';
-      callback(playerSelection);
+      playerSelection = 'Rock';
+      (game);
     });
   
     paperButton.addEventListener('click', () => {
-      selection = 'Paper';
-      callback(playerSelection);
+      playerSelection = 'Paper';
+      (game);
     });
   
     scissorsButton.addEventListener('click', () => {
-      selection = 'Scissors';
-      callback(playerSelection);
+      playerSelection = 'Scissors';
+      (game);
     });
   
   }
