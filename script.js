@@ -30,6 +30,8 @@ function playRound(playerSelection, computerSelection) {
   }
 
   let playerSelection = '';
+  let currentRound = 0;
+const totalRounds = 5; 
   
   function getPlayerSelection() {
 
@@ -40,28 +42,28 @@ function playRound(playerSelection, computerSelection) {
   
     rockButton.addEventListener('click', () => {
       playerSelection = 'Rock';
-      (game);
+      game();
     });
   
     paperButton.addEventListener('click', () => {
       playerSelection = 'Paper';
-      (game);
+      game();
     });
   
     scissorsButton.addEventListener('click', () => {
       playerSelection = 'Scissors';
-      (game);
+      game();
     });
   
   }
   getPlayerSelection();
 
-function game(playerSelection) {
+function game() {
 
   let playerScore = 0;
   let computerScore = 0;
 
-  for (let round = 0; round < 5; round++) {
+  const resultElement = document.getElementById('result');
 
  
     const computerSelection = getComputerChoice();
