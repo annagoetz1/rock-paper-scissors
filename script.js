@@ -64,20 +64,11 @@ function game() {
   let computerScore = 0;
 
   const resultElement = document.getElementById('result');
+  const playNextRound = () => {
+    currentRound++;
 
- 
-    const computerSelection = getComputerChoice();
-  const result = playRound(playerSelection, computerSelection);
+    if (currentRound > totalRounds) {
 
-  if (result === "You Win!") {
-    playerScore++;
-  } else if (result === "Computer Wins!") {
-    computerScore++;
-  }
-  updateResult(result);
-  alert(result);
-  }
- 
   alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
   if (playerScore > computerScore) {
@@ -87,5 +78,26 @@ function game() {
   } else {
     alert("The game is a tie!");
   }
-}
+} else {
+  // Continue to the next round
+  playerSelection = ''; // Reset playerSelection
+  resultElement.textContent = 'Result: '; // Clear the result
 
+  alert(`Round ${currentRound}: Make your selection!`);
+}
+};
+
+
+  const playerSelection = getPlayerSelection();
+    const computerSelection = getComputerChoice();
+  const result = playRound(playerSelection, computerSelection);
+
+  if (result === "You Win!") {
+    playerScore++;
+  } else if (result === "Computer Wins!") {
+    computerScore++;
+  }
+  updateResult(result);
+  playNextRound(); 
+  }
+ 
