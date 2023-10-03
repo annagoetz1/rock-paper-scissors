@@ -88,7 +88,7 @@ function game() {
 };
 
 
-  const playerSelection = getPlayerSelection();
+  let playerSelection = getPlayerSelection();
     const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
 
