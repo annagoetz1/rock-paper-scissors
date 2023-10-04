@@ -35,8 +35,7 @@ const totalRounds = 5;
   
   function getPlayerSelection() {
 
-  
-    const rockButton = document.getElementById('Rock');
+  const rockButton = document.getElementById('Rock');
     const paperButton = document.getElementById('Paper');
     const scissorsButton = document.getElementById('Scissors');
   
@@ -63,7 +62,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  const resultElement = document.getElementById('result');
+ 
   const playNextRound = () => {
     currentRound++;
 
@@ -80,7 +79,7 @@ function game() {
   }
 } else {
   // Continue to the next round
-  playerSelection = ''; // Reset playerSelection
+ 
   resultElement.textContent = 'Result: '; // Clear the result
 
   alert(`Round ${currentRound}: Make your selection!`);
