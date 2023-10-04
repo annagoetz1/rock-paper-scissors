@@ -30,8 +30,7 @@ function playRound(playerSelection, computerSelection) {
   }
 
   let playerSelection = '';
-  let currentRound = 0;
-const totalRounds = 5; 
+
   
   function getPlayerSelection() {
 
@@ -61,6 +60,8 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
+  let currentRound = 0;
+  const totalRounds = 5; 
 
  
   const playNextRound = () => {
@@ -87,7 +88,7 @@ function game() {
 };
 
 
-  let playerSelection = getPlayerSelection();
+  getPlayerSelection();
     const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
 
