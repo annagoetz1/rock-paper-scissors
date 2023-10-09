@@ -60,14 +60,11 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
-  let currentRound = 0;
-  const totalRounds = 5; 
 
- 
-  const playNextRound = () => {
-    currentRound++;
 
-    if (currentRound > totalRounds) {
+  for (let currentRound = 0; currentRound < 5; currentRound++)
+
+  {
 
   alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
@@ -87,7 +84,6 @@ function game() {
 }
 };
 
-
   getPlayerSelection();
     const computerSelection = getComputerChoice();
   const result = playRound(playerSelection, computerSelection);
@@ -98,6 +94,6 @@ function game() {
     computerScore++;
   }
   updateResult(result);
-  playNextRound(); 
+ 
   }
  
