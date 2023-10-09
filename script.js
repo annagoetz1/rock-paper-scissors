@@ -60,15 +60,11 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
-
-  resultElement.textContent = 'Result: '; // Clear the result
-
-  alert(`Round ${currentRound}: Make your selection!`);
-
-
+  
   getPlayerSelection();
-    const computerSelection = getComputerChoice();
-  const result = playRound(playerSelection, computerSelection);
+  const computerSelection = getComputerChoice();
+const result = playRound(playerSelection, computerSelection);
+
 
   if (result === "You Win!") {
     playerScore++;
@@ -79,7 +75,7 @@ function game() {
  
   }
  
-  for (let currentRound = 0; currentRound < 5; currentRound++)
+  for (let currentRound = 1; currentRound < 5; currentRound++)
 
   {
 
