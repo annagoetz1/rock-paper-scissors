@@ -1,4 +1,7 @@
-alert(`Make your selection! Best out of 5.`);
+
+let playerScore = 0;
+let computerScore = 0;
+let currentRound = 1;
 
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
@@ -31,49 +34,17 @@ function playRound(playerSelection, computerSelection) {
 
 
   
-  function getPlayerSelection() {
-
-  const rockButton = document.getElementById('Rock');
-    const paperButton = document.getElementById('Paper');
-    const scissorsButton = document.getElementById('Scissors');
+  function getPlayerSelection(playerSelection) {
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
+    if (result === "You Win!") {
+      playerScore++;
+    } else if (result === "Computer Wins!") {
+      computerScore++;
+    }
+    updateResult(result);
   
-    rockButton.addEventListener('click', () => {
-      playerSelection = 'Rock';
-      game();
-    });
   
-    paperButton.addEventListener('click', () => {
-      playerSelection = 'Paper';
-      game();
-    });
-  
-    scissorsButton.addEventListener('click', () => {
-      playerSelection = 'Scissors';
-      game();
-    });
-  
-  }
-  getPlayerSelection();
-
-function game() {
-
-  let playerScore = 0;
-  let computerScore = 0;
-  let currentRound = 1;
-  while (currentRound <= 5) {
-  currentRound++;
-  }
-  getPlayerSelection();
-  const computerSelection = getComputerChoice();
-const result = playRound(playerSelection, computerSelection);
-  }
-  if (result === "You Win!") {
-    playerScore++;
-  } else if (result === "Computer Wins!") {
-    computerScore++;
-  }
-  updateResult(result);
-  }
 if (currentRound > 5) {
   alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
@@ -85,4 +56,16 @@ if (currentRound > 5) {
     alert("The game is a tie!");
   }
 } 
- 
+}
+function startGame() {
+  const rockButton = document.getElementById('Rock');
+  const paperButton = document.getElementById('Paper');
+  const scissorsButton = document.getElementById('Scissors');
+  rockButton.addEventListener('click', () => getPlayerSelection('Rock'));
+  paperButton.addEventListener('click', () => getPlayerSelection('Paper'));
+  scissorsButton.addEventListener('click', () => getPlayerSelection('Scissors'));
+}
+
+alert("Make your selection! Best out of 5.");
+startGame();
+
