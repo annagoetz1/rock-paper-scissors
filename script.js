@@ -1,4 +1,4 @@
-
+alert(`Make your selection! Best out of 5.`);
 
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
@@ -29,7 +29,6 @@ function playRound(playerSelection, computerSelection) {
     resultElement.textContent = 'Result: ' + result;
   }
 
-  let playerSelection = '';
 
   
   function getPlayerSelection() {
@@ -60,25 +59,22 @@ function game() {
 
   let playerScore = 0;
   let computerScore = 0;
-  
+  let currentRound = 1;
+  while (currentRound <= 5) {
+  currentRound++;
+  }
   getPlayerSelection();
   const computerSelection = getComputerChoice();
 const result = playRound(playerSelection, computerSelection);
-
-
+  }
   if (result === "You Win!") {
     playerScore++;
   } else if (result === "Computer Wins!") {
     computerScore++;
   }
   updateResult(result);
- 
   }
- 
-  for (let currentRound = 1; currentRound < 5; currentRound++)
-
-  {
-
+if (currentRound > 5) {
   alert(`Final Scores: Player ${playerScore} - ${computerScore} Computer`);
 
   if (playerScore > computerScore) {
