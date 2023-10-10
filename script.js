@@ -1,7 +1,7 @@
 
 let playerScore = 0;
 let computerScore = 0;
-let currentRound = 1;
+let currentRound = 0;
 
 function getComputerChoice() {
   const choices = ['Rock', 'Paper', 'Scissors'];
@@ -43,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
       computerScore++;
     }
     updateResult(result);
+    currentRound++;
   
   
 if (currentRound > 5) {
