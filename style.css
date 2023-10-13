@@ -1,0 +1,27 @@
+body {
+  background-color: aquamarine;
+  color: black;
+}
+
+.center-div {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  .button-container {
+    display: flex;
+ justify-content: center;
+ align-items: center;
+
+  }
+
+  #result {
+    display: flex;
+ justify-content: center;
+ align-items: center;
+  }
+  h3 {
+    display: flex;
+ justify-content: center;
+ align-items: center;
+  }
