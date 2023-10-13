@@ -32,7 +32,10 @@ function playRound(playerSelection, computerSelection) {
     resultElement.textContent = 'Result: ' + result;
   }
 
-
+function runningScore(computerScore, playerScore) {
+  let scoreElement = document.getElementById('running-score');
+  scoreElement.textContent = 'Running Score: '  + computerScore + ' ' + playerScore;
+}
   
   function getPlayerSelection(playerSelection) {
     const computerSelection = getComputerChoice();
@@ -42,6 +45,7 @@ function playRound(playerSelection, computerSelection) {
     } else if (result === "Computer Wins!") {
       computerScore++;
     }
+    runningScore(computerScore,playerScore);
     updateResult(result);
     currentRound++;
   
