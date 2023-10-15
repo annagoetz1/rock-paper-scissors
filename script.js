@@ -34,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
 
 function runningScore(computerScore, playerScore) {
   let scoreElement = document.getElementById('running-score');
-  scoreElement.textContent = 'Running Score: '  + computerScore + ' ' + playerScore;
+  scoreElement.textContent = 'Running Score: '  + playerScore + ' - ' + computerScore;
 }
   
   function getPlayerSelection(playerSelection) {
